@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in form</title>
+    
+    <link rel="stylesheet" href="css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+<section class="container forms">
+    <div class="form login">
+      <div class="form-content">
+        <header>Login</header>
+        <form action="../home.html">
+            <div class="field input-field">
+                <p id="err"></p>
+               <input type="email" placeholder="Email" id="emails" class="input">   
+            </div>
+
+            <div class="field input-field">
+                <input type="password" placeholder="Password" id="passwords" class="password">
+                <i class='bx bx-hide eye-icon'></i>
+            </div>
+
+            <div class="form-link">
+                <a href="#" class="forgot-pass">Forgot password?</a>
+            </div>
+
+            <div class="field button-field">
+                <button onclick="login()">Login</button>
+            </div>
+           </form> 
+
+           <div class="form-link">
+               <span>Already have an account?  <a href="signup.html" class="link signup-link">Signup</a></span> 
+               
+            </div>
+      </div>
+
+      <div class="line"></div>
+
+    </div>
+</section>
+   <script src="/java/login.js"></script>
+
+</body>
+</html>

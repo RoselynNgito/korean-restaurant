@@ -1,0 +1,219 @@
+<html>
+
+<head>
+  <title> Gallery</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  <link rel="stylesheet" href="/css/gallery.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  
+    <div class="container">
+      <div class="logo">
+    <div class="nav-bar">
+      <div class="nav-logo">
+        <img src="photos/cooking-logo.webp">
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="home.html">HOME</a>
+            <div class="sub-menu-1">
+              <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Services</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="Gallery.html">GALLERY</a></li>
+          <li><a href="Contact us.html">CONTACT US</a></li>
+          <li><a href="login.html">LOG IN</a></li>
+        </ul>
+        <button type="button" class="btn"> <a href="signup.html">SIGN UP </a> </button> 
+      </div>
+    </div>
+
+
+    <div class="banner-title">
+      
+<!--slideshow-->
+
+
+<div class="img-slider">
+  <div class="slide active">
+    <img src="photos/Korean cuisine.webp" alt="" />
+    <div class="info">
+        </div>
+  </div>
+  <div class="slide">
+    <img src="photos/korean wallpaper.webp" alt="" />
+    <div class="info">
+      
+     
+    </div>
+  </div>
+
+  <div class="slide">
+    <img
+      src="photos/cooking pot.jpg"
+      alt=""
+    />
+    <div class="info">
+      
+    </div>
+  </div>
+
+  <div class="slide">
+    <img
+      src="photos/korean.jpg"
+      alt=""
+    />
+    <div class="info">
+    </div>
+  </div>
+
+  <div class="slide">
+    <img
+      src="photos/Bibimpap-korean-food.jpg"
+      alt=""
+    />
+    <div class="info">
+    </div>
+  </div>
+
+  <div class="navigation">
+    <div class="btn active"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+  </div>
+</div>
+
+
+
+
+<div class="search-box">
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search menu">
+        </div>
+
+        <div class="images">
+            <div class="image-box" data-name="Korean">
+                <img src="photos/gallery/menu.jpg" alt="">
+                <h6>Korean</h6>
+            </div>
+            <div class="image-box" data-name="cuisine">
+                <img src="photos/gallery/menu 2.jpg" alt="">
+                <h6>cuisine</h6>
+            </div>
+            <div class="image-box" data-name="japanese">
+                <img src="photos/gallery/menu 3.jpg" alt="">
+                <h6>japanese</h6>
+            </div>
+            <div class="image-box" data-name="kimchi">
+                <img src="photos/gallery/menu 7.jpg" alt="">
+                <h6>kimchi</h6>
+            </div>
+            <div class="image-box" data-name="meat">
+                <img src="photos/gallery/menu 5.jpg" alt="">
+                <h6>meat</h6>
+            </div>
+            <div class="image-box" data-name="soup">
+                <img src="photos/gallery/menu 6.jpg" alt="">
+                <h6>soup</h6>
+            </div>
+            <div class="image-box" data-name="appetizer">
+                <img src="photos/gallery/menu 4.jpg" alt="">
+                <h6>appetizer</h6>
+            </div>
+            <div class="image-box" data-name="noodles">
+                <img src="photos/gallery/menu 8.jpg" alt="">
+                <h6>noodles</h6>
+            </div>
+            <div class="image-box" data-name="drinks">
+                <img src="photos/gallery/drinks.jpg" alt="">
+                <h6>drinks</h6>
+            </div>
+            <div class="image-box" data-name="soft drinks">
+                <img src="photos/gallery/drinks 2.jpg" alt="">
+                <h6>soft drinks</h6>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+      <p>we pride ourselves on serving exotic korean dishes.</p> 
+       <p> want to know more about us ?? <a href="Contact us.html">contact us</a></p>
+     
+     </div>
+    </div>
+     </div>
+     
+  
+
+  <script type="text/javascript">
+    var slides = document.querySelectorAll(".slide");
+    var btns = document.querySelectorAll(".btn");
+    let currentSlide = 1;
+
+    // javascriptfor image slider manual navigation
+
+    var manualNav = function (manual) {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+      });
+
+      slides[manual].classList.add("active");
+      btns[manual].classList.add("active");
+    };
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // js for image slider autoplay
+
+    var repeat = function (activeClass) {
+      let active = document.getElementsByClassName("active");
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function () {
+          [...active].forEach((activeSlide) => {
+              activeSlide.classList.remove('active');
+          });
+
+
+          slides[i].classList.add("active");
+          btns[i].classList.add("active");
+          i++;
+
+          if (slides.length == i) {
+            i = 0;
+          }
+          if (i >= slides.length) {
+            return;
+          }
+          repeater();
+        }, 10000);
+      };
+      repeater();
+    };
+    repeat();
+  </script>
+<script src="java/gallery.js"></script>
+
+</body>
+
+</html>
